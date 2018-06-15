@@ -1,0 +1,17 @@
+{# @var meta_entity \K3ssen\GeneratorBundle\MetaData\MetaEntityInterface #}
+{# @var generate_options \K3ssen\GeneratorBundle\Generator\CrudGenerateOptions#}
+{% extends '@!Generator/skeleton/templates/edit.html.twig.twig' %}
+{% set entity_singularized = meta_entity.name|tabalize %}
+
+{% block title %}
+{{ "{% set title = '"~meta_entity.name~"' %}" }}
+{% if meta_entity.displayProperty %}
+{{ "{% set sub_title = ' - " ~entity_singularized~" %}" }}
+{% endif %}
+{% endblock %}
+
+{% block body %}
+{{ "{% block content %}" }}
+    {{ "{% include entity_form_box('Edit', "~entity_singularized~", "~(generate_options.useVoter?'true':'false')~", form) %}"  }}
+{{ "{% endblock %}" }}
+{% endblock %}

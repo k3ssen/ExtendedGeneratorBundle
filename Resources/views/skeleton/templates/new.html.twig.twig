@@ -1,0 +1,13 @@
+{# @var meta_entity \K3ssen\GeneratorBundle\MetaData\MetaEntityInterface #}
+{# @var generate_options \K3ssen\GeneratorBundle\Generator\CrudGenerateOptions#}
+{% extends '@!Generator/skeleton/templates/new.html.twig.twig' %}
+
+{% block title %}
+    {{ "{% set title = '"~meta_entity.name~"' %}" }}
+{% endblock %}
+
+{% block body %}
+{{ "{% block content %}" }}
+    {{ "{% include entity_form_box('New', "~entity_singularized~", "~(generate_options.useVoter?'true':'false')~", form) %}"  }}
+{{ "{% endblock %}" }}
+{% endblock %}

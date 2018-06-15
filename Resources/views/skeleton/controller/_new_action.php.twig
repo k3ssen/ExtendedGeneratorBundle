@@ -1,0 +1,10 @@
+{# @var meta_entity \K3ssen\GeneratorBundle\MetaData\MetaEntityInterface #}
+{# @var generate_options \K3ssen\GeneratorBundle\Generator\CrudGenerateOptions#}
+{% use '@!Generator/skeleton/controller/_new_action.php.twig' %}
+{% block new_action_form_handling %}
+        if ($this->handleForm($form, $request)) {
+{% block new_action_redirect_response %}
+            return $this->redirectToRoute('{{ route_prefix }}_show', ${{ entity_variable }});
+{% endblock %}
+        }
+{% endblock %}
