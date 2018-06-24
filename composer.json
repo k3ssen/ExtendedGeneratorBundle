@@ -12,9 +12,7 @@
     ],
     "require": {
         "php": ">=7.1",
-        "k3ssen/base-admin": "dev-master"
-    },
-    "require-dev": {
+        "k3ssen/base-admin": "dev-master",
         "k3ssen/generator": "dev-master"
     },
     "suggest": {
