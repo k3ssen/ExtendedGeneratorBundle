@@ -15,22 +15,13 @@ AbstractVoter which in turn is extended by the generated Voter classes.
 
 ### Getting started
 
-Make sure this repository is included in your `composer.json`
-    
-    "repositories": [
-        {
-            "type": "git",
-            "url": "https://github.com/k3ssen/ExtendedGeneratorBundle.git"
-        }
-    ]
-    
-After saving your composer.json, run `composer require k3ssen/extended-generator:dev-master --dev` in your console.
+Run `composer require k3ssen/extended-generator:dev-master --dev` in your console.
 
 Symfony Flex should add the bundle automatically to your `config/bundles.php`.
 
 ### Usage
 
-When it comes to uses nearly the same applies as the [usage of the GeneratorBundle](https://github.com/k3ssen/GeneratorBundle/blob/master/Resources/doc/usage.md).
+When it comes to usage nearly the same applies as the [usage of the GeneratorBundle](https://github.com/k3ssen/GeneratorBundle/blob/master/Resources/doc/usage.md).
 
 During crud generation (when using the `generator:crud`) command
 you'll have an extra question that lets you choose if you want to use
