@@ -20,9 +20,9 @@ class TemplatesCommand extends \K3ssen\GeneratorBundle\Command\TemplatesCommand
         }
 
         if ($file->getFilename()[0] === '_') {
-            $content .= "\n{% use '@!ExtendedGeneratorBundle/".$relativePathname."' %}";
+            $content .= "\n{% use '@!ExtendedGenerator/".$relativePathname."' %}";
         } else {
-            $content .= "\n{% extends '@!ExtendedGeneratorBundle/".$relativePathname."' %}";
+            $content .= "\n{% extends '@!ExtendedGenerator/".$relativePathname."' %}";
         }
         return $content;
     }

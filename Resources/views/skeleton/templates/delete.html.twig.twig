@@ -15,7 +15,7 @@
 
 {% block body %}
 {{ "{% block content %}" }}
-    {{ "{% embed entity_form_box('Delete', "~entity_singularized~", "~(generate_options.useVoter?'true':'false')~", form) %}"  }}
+    {{ "{% embed.entity_form_box('Delete', "~entity_singularized~", "~(generate_options.useVoter?'true':'false')~", form) %}"  }}
         <p>
             Are you sure you want to delete this {{ meta_entity.name }}?
         </p>

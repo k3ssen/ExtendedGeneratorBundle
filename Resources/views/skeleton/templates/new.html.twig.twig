@@ -3,11 +3,11 @@
 {% extends '@!Generator/skeleton/templates/new.html.twig.twig' %}
 
 {% block title %}
-    {{ "{% set title = '"~meta_entity.name~"' %}" }}
+{{ "{% set title = '"~meta_entity.name~"' %}" }}
 {% endblock %}
 
 {% block body %}
 {{ "{% block content %}" }}
-    {{ "{% include entity_form_box('New', "~entity_singularized~", "~(generate_options.useVoter?'true':'false')~", form) %}"  }}
+    {{ "{% include.entity_form_box('New', "~entity_singularized~", "~(generate_options.useVoter?'true':'false')~", form) %}"  }}
 {{ "{% endblock %}" }}
 {% endblock %}

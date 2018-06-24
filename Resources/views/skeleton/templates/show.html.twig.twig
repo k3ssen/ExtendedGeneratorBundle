@@ -11,7 +11,7 @@
 
 {% block body %}
 {{ "{% block content %}" }}
-    {{ "{% embed entity_box('Details', "~entity_singularized~", "~(generate_options.useVoter?'true':'false')~") %}"  }}
+    {{ "{% embed.entity_box('Details', "~entity_singularized~", "~(generate_options.useVoter?'true':'false')~") %}"  }}
 {%- for property in meta_entity.properties %}
 {# @var property \K3ssen\GeneratorBundle\MetaData\Property\MetaPropertyInterface #}
     {%- set getter = entity_singularized ~ '.' ~ property.name %}

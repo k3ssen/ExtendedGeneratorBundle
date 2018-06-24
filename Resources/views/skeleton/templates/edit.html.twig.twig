@@ -12,6 +12,6 @@
 
 {% block body %}
 {{ "{% block content %}" }}
-    {{ "{% include entity_form_box('Edit', "~entity_singularized~", "~(generate_options.useVoter?'true':'false')~", form) %}"  }}
+    {{ "{% include.entity_form_box('Edit', "~entity_singularized~", "~(generate_options.useVoter?'true':'false')~", form) %}"  }}
 {{ "{% endblock %}" }}
 {% endblock %}
