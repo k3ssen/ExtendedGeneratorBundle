@@ -60,7 +60,6 @@ class ExtendedGeneratorExtension extends Extension implements PrependExtensionIn
             }
         }
 
-
         $container->prependExtensionConfig('generator', $prependConfig);
     }
 
