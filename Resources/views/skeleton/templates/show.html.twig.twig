@@ -11,13 +11,13 @@
 
 {% block body %}
 {{ "{% block content %}" }}
-    {{ "{% embed.entity_box('Details', "~entity_singularized~", "~(generate_options.useVoter?'true':'false')~") %}"  }}
+    {{ "{% embed 'components/box.twig' with {title: 'Details', entity: "~entity_singularized~", vote: "~(generate_options.useVoter?'true':'false')~"} %}"  }}
 {%- for property in meta_entity.properties %}
 {# @var property \K3ssen\GeneratorBundle\MetaData\Property\MetaPropertyInterface #}
     {%- set getter = entity_singularized ~ '.' ~ property.name %}
     {%- if property.ormType in 'OneToManyToMany' %}
 
-        {{ "{% embed static_field_row('"~property.name~"') %}"}}
+        {{ "{% embed 'components/static_field_row.twig' with {label: '"~property.name~"'} %}"}}
             <ul>
                 {{ '{% for ' ~ property.name|singularize|tabalize ~ ' in ' ~ getter ~ ' %}' }}
                     <li>{{ '{{ ' ~ property.name|singularize|tabalize ~ ' }}' }}</li>

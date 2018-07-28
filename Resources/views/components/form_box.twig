@@ -1,0 +1,25 @@
+{% extends '@ExtendedGenerator/components/box.twig' %}
+
+{% block box_body %}
+    {% block body %}{% endblock %}
+    {% block box_form %}
+        {% block box_form_start %}
+            {{ form_start(form) }}
+        {% endblock %}
+        {% block box_form_widget %}
+            {% for form_child in form %}
+                {% set block_form_row = 'form_row_'~form_child.vars.name %}
+                {% if block(block_form_row) is defined %}
+                    {{ block(block_form_row) }}
+                {% endif %}
+                {{ form_row(form_child) }}
+            {% endfor %}
+        {% endblock %}
+        {% block box_form_buttons %}
+            <button class="btn btn-{{ btn_type|default('primary') }}">{{ btn_text|default('Save') }}</button>
+        {% endblock %}
+        {% block box_form_end %}
+            {{ form_end(form) }}
+        {% endblock %}
+    {% endblock %}
+{% endblock %}

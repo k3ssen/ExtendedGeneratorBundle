@@ -11,6 +11,7 @@ services:
 
 
 #    K3ssen\GeneratorBundle\Command\EntityQuestion\TraitsQuestion: ~
+    Sg\DatatablesBundle\Response\DatatableResponse: '@sg_datatables.response'
 
     K3ssen\ExtendedGeneratorBundle\:
         autowire: true
@@ -30,3 +31,7 @@ services:
         bind:
             $askUseDatatable: '%extended_generator.ask_use_datatable%'
             $useDatatableDefault: '%extended_generator.use_datatable_default%'
+
+    K3ssen\ExtendedGeneratorBundle\Router\ExtendedRouter:
+        decorates: 'router'
+        arguments: ['@K3ssen\ExtendedGeneratorBundle\Router\ExtendedRouter.inner']

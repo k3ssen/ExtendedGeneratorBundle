@@ -4,6 +4,8 @@ declare(strict_types=1);
 namespace K3ssen\ExtendedGeneratorBundle\Generator;
 
 use K3ssen\GeneratorBundle\MetaData\MetaEntityInterface;
+use Symfony\Component\Filesystem\Filesystem;
+use Symfony\Component\Finder\Finder;
 
 class CrudGenerator extends \K3ssen\GeneratorBundle\Generator\CrudGenerator
 {
@@ -29,6 +31,7 @@ class CrudGenerator extends \K3ssen\GeneratorBundle\Generator\CrudGenerator
             $files[] = $this->createBaseClassIfMissing('Datatable', 'AbstractDatatable');
             $files[] = $this->createFile($metaEntity,'Datatable', 'Datatable');
         }
+        $files = array_merge($files, $this->generateComponentExtensionFiles());
         return array_filter($files);
     }
 
@@ -39,7 +42,7 @@ class CrudGenerator extends \K3ssen\GeneratorBundle\Generator\CrudGenerator
         if ($this->getFileSystem()->exists($targetFile)) {
             return null;
         }
-        $fileContent = $this->twig->render('@Generator/skeleton/'.strtolower($dirName).'/'.$fileSuffixName.'.php.twig', [
+        $fileContent = $this->twig->render('@ExtendedGenerator/skeleton/'.strtolower($dirName).'/'.$fileSuffixName.'.php.twig', [
             'generate_options' => $this->generateOptions,
         ]);
         $this->getFileSystem()->dumpFile($targetFile, $fileContent);
@@ -52,5 +55,29 @@ class CrudGenerator extends \K3ssen\GeneratorBundle\Generator\CrudGenerator
             'meta_entity' => $metaEntity,
             'generate_options' => $this->generateOptions,
         ], $params));
+    }
+
+    protected function generateComponentExtensionFiles()
+    {
+        $originDir = __DIR__ . '/../Resources/views/components';
+        $targetDir = $this->projectDir  . '/templates/components/';
+
+        $finder = new Finder();
+        $finder->files()->in($originDir);
+
+        $fs = new Filesystem();
+        $files = [];
+
+        foreach ($finder as $file) {
+            $relativePathname = $file->getRelativePathname();
+
+            $targetPath = $targetDir.$relativePathname;
+            if ($fs->exists($targetPath)) {
+            } else {
+                $fs->dumpFile($targetPath, "{% extends '@!ExtendedGenerator/components/".$relativePathname."' %}");
+                $files[] = $targetPath;
+            }
+        }
+        return $files;
     }
 }

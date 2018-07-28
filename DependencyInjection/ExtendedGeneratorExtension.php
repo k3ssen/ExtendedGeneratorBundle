@@ -3,12 +3,12 @@ declare(strict_types=1);
 
 namespace K3ssen\ExtendedGeneratorBundle\DependencyInjection;
 
-use K3ssen\BaseAdminBundle\Model\BlameableEntityInterface;
-use K3ssen\BaseAdminBundle\Model\BlameableEntityTrait;
-use K3ssen\BaseAdminBundle\Model\SoftDeleteableEntityTrait;
-use K3ssen\BaseAdminBundle\Model\SoftDeleteableInterface;
-use K3ssen\BaseAdminBundle\Model\TimestampableEntityTrait;
-use K3ssen\BaseAdminBundle\Model\TimestampableInterface;
+use K3ssen\ExtendedGeneratorBundle\Model\BlameableEntityInterface;
+use K3ssen\ExtendedGeneratorBundle\Model\BlameableEntityTrait;
+use K3ssen\ExtendedGeneratorBundle\Model\SoftDeleteableEntityTrait;
+use K3ssen\ExtendedGeneratorBundle\Model\SoftDeleteableInterface;
+use K3ssen\ExtendedGeneratorBundle\Model\TimestampableEntityTrait;
+use K3ssen\ExtendedGeneratorBundle\Model\TimestampableInterface;
 use K3ssen\ExtendedGeneratorBundle\Command\AttributeQuestion\IdAttributeQuestion;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;

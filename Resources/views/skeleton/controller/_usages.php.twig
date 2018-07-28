@@ -3,11 +3,11 @@
 {% use '@!Generator/skeleton/controller/_usages.php.twig' %}
 {% block usages %}
 {{ parent() }}
-{% if generate_options.useDatatable %}
+{%- if generate_options.useDatatable %}
+
 use {{ meta_entity.fullClassName | replace({'\\Entity\\':'\\Datatable\\'}) }}Datatable;
 {% endif %}
 {% endblock %}
-
 
 {% block use_repository %}
 {% if generate_options.useDatatable == false %}

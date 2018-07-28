@@ -8,6 +8,6 @@
 
 {% block body %}
 {{ "{% block content %}" }}
-    {{ "{% include.entity_form_box('New', "~entity_singularized~", "~(generate_options.useVoter?'true':'false')~", form) %}"  }}
+    {{ "{% include 'components/form_box.twig' with {title: 'New', entity: "~entity_singularized~", vote: "~(generate_options.useVoter?'true':'false')~"} %}"  }}
 {{ "{% endblock %}" }}
 {% endblock %}

@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace K3ssen\ExtendedGeneratorBundle\Command\AttributeQuestion;
 
-use K3ssen\BaseAdminBundle\Model\IdentifiableInterface;
+use K3ssen\ExtendedGeneratorBundle\Model\IdentifiableInterface;
 use K3ssen\GeneratorBundle\Command\AttributeQuestion\BasicAttributeQuestion;
 use K3ssen\GeneratorBundle\Command\Helper\CommandInfo;
 use K3ssen\GeneratorBundle\MetaData\Interfaces\MetaInterfaceFactory;

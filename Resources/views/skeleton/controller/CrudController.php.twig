@@ -1,3 +1,14 @@
 {# @var meta_entity \K3ssen\GeneratorBundle\MetaData\MetaEntityInterface #}
-{# @var generate_options \K3ssen\GeneratorBundle\Generator\CrudGenerateOptions#}
-{% extends '@!Generator/skeleton/controller/CrudController.php.twig' %}
+{# @var generate_options \K3ssen\ExtendedGeneratorBundle\Generator\CrudGenerateOptions #}
+<?php
+//TODO: THIS FILE IS AUTO-GENERATED - REMOVE THIS COMMENT TO MAKE CLEAR THAT YOU'VE REVIEWED THIS FILE
+declare(strict_types=1);
+
+namespace {{ generate_options.defaultBundleNamespace }}\Controller;
+
+use K3ssen\ExtendedGeneratorBundle\Controller\CrudController as ExtendedGeneratorCrudController;
+
+abstract class CrudController extends ExtendedGeneratorCrudController
+{
+    // Here you might want to extend or override the ExtendedGeneratorCrudController
+}

@@ -37,8 +37,19 @@ class CrudCommand extends \K3ssen\GeneratorBundle\Command\CrudCommand
 
     protected function configure()
     {
+        if ($_ENV['APP_ENV'] !== 'dev') {
+            $this->setHidden(true);
+        }
         parent::configure();
         $this->addOption('use-datatable', null,InputOption::VALUE_OPTIONAL);
+    }
+
+    protected function execute(InputInterface $input, OutputInterface $output)
+    {
+        if ($_ENV['APP_ENV'] !== 'dev') {
+            $output->writeln('<error>Command generator:crud can only be used in dev-mode</error>');
+        }
+        parent::execute($input, $output);
     }
 
     protected function askCrudQuestions(InputInterface $input, OutputInterface $output)

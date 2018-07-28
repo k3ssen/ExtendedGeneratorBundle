@@ -3,11 +3,29 @@ declare(strict_types=1);
 
 namespace K3ssen\ExtendedGeneratorBundle\Command;
 
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Finder\SplFileInfo;
 
 class TemplatesCommand extends \K3ssen\GeneratorBundle\Command\TemplatesCommand
 {
     protected static $defaultName = 'generator:extended:templates';
+
+    protected function configure()
+    {
+        if ($_ENV['APP_ENV'] !== 'dev') {
+            $this->setHidden(true);
+        }
+        parent::configure();
+    }
+
+    protected function execute(InputInterface $input, OutputInterface $output)
+    {
+        if ($_ENV['APP_ENV'] !== 'dev') {
+            $output->writeln('<error>Command generator:extended:templates can only be used in dev-mode</error>');
+        }
+        parent::execute($input, $output);
+    }
 
     protected function createContentForFile(SplFileInfo $file): string
     {

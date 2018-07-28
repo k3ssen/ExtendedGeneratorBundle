@@ -15,7 +15,7 @@
             {#- only add properties that are no relationship-type (ormType that contains 'To' are a relationtype, like ManyToOne) #}
             {%- for property in meta_entity.properties if 'To' not in property.ormType %}
 
-            ->add('{{ property.name }}', {{ property.ormType in 'datetime' ? 'DateTimeColumn::class' : 'Column::class' }}, [
+            ->add('{{ property.name }}', {{ 'date' in property.ormType ? 'DateTimeColumn::class' : 'Column::class' }}, [
                 'title' => '{{ property.name|humanize }}'
             ])
             {%- endfor %}
