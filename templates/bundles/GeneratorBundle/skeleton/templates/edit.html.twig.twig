@@ -1,0 +1,9 @@
+{# @var meta_entity \K3ssen\GeneratorBundle\MetaData\MetaEntityInterface #}
+{# @var generate_options \K3ssen\GeneratorBundle\Generator\CrudGenerateOptions#}
+{% extends '@!Generator/skeleton/templates/edit.html.twig.twig' %}
+
+{% block body %}
+{{ "{% block body %}" }}
+    {{ "{% include 'components/card_form.twig' with {entity: "~entity_singularized~"} %}" }}
+{{ "{% endblock %}" }}
+{% endblock %}

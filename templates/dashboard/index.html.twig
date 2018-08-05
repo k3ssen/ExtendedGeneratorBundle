@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% set title = 'Dashboard' %}
+
+{% block body %}
+    {% embed 'components/card.twig' %}
+        Lets start creating your entities and crud right away:
+
+        <h3>Creating an entity</h3>
+        <p>
+            Open your console and run the following command:
+        </p>
+        <p>
+            <code>
+                php bin/console generator:entity:create
+            </code>
+        </p>
+        <p>
+        This command will let you interactively create an entity.
+        </p>
+        <h3>Creating the CRUD</h3>
+        <p>
+            After you've created one or more entities, you can start generating CRUD by running the following command:
+        </p>
+        <p>
+            <code>
+                php bin/console generator:crud
+            </code>
+        </p>
+        <p>
+            This command will show which entities are available. Chose the one to your liking to start generating CRUD for this
+            entity.
+        </p>
+    {% endembed %}
+{% endblock %}

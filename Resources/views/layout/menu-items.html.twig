@@ -1,8 +1,0 @@
-{% set current_route = app.request.get('_route') %}
-{% for name,route in index_routes() %}
-    <li class="nav-item">
-        <a class="nav-link {{ name~'_' in current_route ? 'active' : '' }}" href="{{ route.path }}">
-            {{ name | capitalize }}
-        </a>
-    </li>
-{% endfor %}

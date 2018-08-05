@@ -1,9 +1,0 @@
-{# @var meta_entity \K3ssen\GeneratorBundle\MetaData\MetaEntityInterface #}
-{# @var generate_options \K3ssen\GeneratorBundle\Generator\CrudGenerateOptions#}
-{% use '@!Generator/skeleton/security/_usages.php.twig' %}
-{% block usages %}
-use {{ meta_entity.fullClassName }};
-{% if meta_entity.namespace | replace({'\\Entity': ''}) != generate_options.defaultBundleNamespace %}
-use {{ generate_options.defaultBundleNamespace }}\Security\AbstractVoter;
-{% endif %}
-{% endblock %}

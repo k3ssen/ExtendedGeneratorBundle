@@ -1,0 +1,18 @@
+{% set current_route = app.request.get('_route') %}
+<!-- Sidebar -->
+<ul class="sidebar navbar-nav">
+    <li class="nav-item {{ 'dashboard' in current_route ? 'active' : '' }}">
+        <a class="nav-link" href="{{ path('dashboard') }}">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Dashboard</span>
+        </a>
+    </li>
+    {% for name,route in index_routes() %}
+        <li class="nav-item {{ name~'_' in current_route ? 'active' : '' }}">
+            <a class="nav-link" href="{{ route.path }}">
+                <i class="fas fa-list"></i>
+                <span>{{ name | humanize }}</span>
+            </a>
+        </li>
+    {% endfor %}
+</ul>

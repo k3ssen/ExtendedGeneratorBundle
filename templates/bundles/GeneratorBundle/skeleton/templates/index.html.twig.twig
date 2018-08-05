@@ -1,0 +1,17 @@
+{# @var meta_entity \K3ssen\GeneratorBundle\MetaData\MetaEntityInterface #}
+{# @var generate_options \K3ssen\GeneratorBundle\Generator\CrudGenerateOptions#}
+{% extends '@!Generator/skeleton/templates/index.html.twig.twig' %}
+
+{% block body %}
+{{ "{% block body %}" }}
+    {{ "{% embed 'components/card.twig' with {action_prefix: '"~entity_singularized~"'} %}" }}
+{% block index_table %}
+{% if generate_options.useDatatable %}
+        {{ " {{ sg_datatables_render_html(datatable) }}" }}
+{% else %}
+{{ parent() }}
+{% endif %}
+{% endblock %}
+    {{ "{% endembed %}" }}
+{{ "{% endblock %}" }}
+{% endblock %}

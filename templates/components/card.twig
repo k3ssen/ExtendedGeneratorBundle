@@ -1,0 +1,27 @@
+<div class="card">
+    {% block box_header %}
+        <div class="card-header">
+            <div class="float-right">
+            </div>
+            {% block box_title %}
+                <h3 class="m-0">{{ title|default('') }}</h3>
+            {% endblock %}
+        </div>
+    {% endblock %}
+    <div class="card-body">
+        {% block card_body %}
+            {% block body %}
+                {{ content|default('')|raw }}
+            {% endblock %}
+        {% endblock %}
+    </div>
+    <div class="card-footer">
+        {% block card_footer %}
+            {% block footer %}
+                {% if entity is defined or action_prefix is defined %}
+                    {% include 'components/actions.twig' %}
+                {% endif %}
+            {% endblock %}
+        {% endblock %}
+    </div>
+</div>
