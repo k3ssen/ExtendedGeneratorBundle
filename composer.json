@@ -1,4 +1,5 @@
 {
+    "name": "k3ssen/extended-generator",
     "type": "project",
     "license": "proprietary",
     "require": {
