@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace App\Router;
 
-use App\Model\IdentifiableInterface;
+use App\Entity\Interfaces\IdentifiableInterface;
 use Symfony\Component\Routing\RequestContext;
 use Symfony\Component\Routing\Router as BaseRouter;
 use Symfony\Component\Routing\RouterInterface;

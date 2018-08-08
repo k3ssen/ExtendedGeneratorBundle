@@ -1,17 +1,12 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Model;
+namespace App\Entity\Traits;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Security\Core\User\UserInterface;
 
-/**
- * This BlameableEntityTrait can be used with the BlameableEntityInterface.
- * Note that this trait refers to "App\Entity\User", which is the most common place for the User-class to reside.
- * If your User-class is located elsewhere, make sure you use something else (e.g. copy this trait and use a different targetEntity)
- */
 trait BlameableTrait
 {
     /**

@@ -1,2 +1,0 @@
-services:
-    Sg\DatatablesBundle\Response\DatatableResponse: '@sg_datatables.response'

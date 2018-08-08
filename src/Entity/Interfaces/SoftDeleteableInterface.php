@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Model;
+namespace App\Entity\Interfaces;
 
 /**
  * Alternative to Gedmo\SoftDeleteable\SoftDeleteable, since that interface does not promise any method.

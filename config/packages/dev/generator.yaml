@@ -3,22 +3,23 @@ generator:
     ask_display_field: true           #use false if you don't want to be bothered what field to use for __toString in entities.
     ask_entity_subdirectory: true     #use false if you're not planning on using subdirectories for entities.
     ask_traits: true                  #use false if you don't want trait-questions.
+    ask_validations: true             #use false if you don't want validation-questions during entity-generation
     trait_options:
         Blameable:
             ask: true                 #use false to not ask for Blameable
             default: true             #default choice-value (also used when aks is set to false)
-            namespace: 'App\Model\BlameableTrait'
-            interface_namespace: 'App\Model\BlameableInterface'
+            namespace: 'App\Entity\Traits\BlameableTrait'
+            interface_namespace: 'App\Entity\Interfaces\BlameableInterface'
         SoftDeleteable:
             ask: true
             default: true
-            namespace: 'App\Model\SoftdeleteableTrait'
-            interface_namespace: 'App\Model\SoftdeleteableInterface'
+            namespace: 'App\Entity\Traits\SoftDeleteableTrait'
+            interface_namespace: 'App\Entity\Interfaces\SoftDeleteableInterface'
         Timestampable:
             ask: true
             default: true
-            namespace: 'App\Model\TimestampableTrait'
-            interface_namespace: 'App\Model\TimestampableInterface'
+            namespace: 'App\Entity\Traits\TimestampableTrait'
+            interface_namespace: 'App\Entity\Interfaces\TimestampableInterface'
         # You can add more traits if you want.
 
     # Overwriting attribute-settings are part of a special usecase.
