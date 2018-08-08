@@ -1,6 +1,6 @@
 {# @var meta_entity \K3ssen\GeneratorBundle\MetaData\MetaEntityInterface #}
 {# @var generate_options \K3ssen\GeneratorBundle\Generator\CrudGenerateOptions#}
-{% extends '@!Generator/skeleton/templates/show.html.twig.twig' %}
+{% extends '@!Generator/skeleton/templates/show.txt.twig' %}
 
 {% block body %}
 {{ "{% block body %}" }}
@@ -35,7 +35,8 @@
 
         {{ "{{ static_field_row('"~ property.name ~"'|humanize, "~getter~ filter|default('') ~") }}" -}}
         {%- endif %}
-    {% endfor %}
+    {%- endfor %}
+
     {{ "{% endembed %}" }}
 {{ "{% endblock %}" }}
 {% endblock %}

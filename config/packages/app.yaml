@@ -20,19 +20,19 @@ fos_user:
 twig:
     form_themes: ['bootstrap_4_horizontal_layout.html.twig']
 
-# TODO: Move to services.yaml
-services:
-    Sg\DatatablesBundle\Response\DatatableResponse: '@sg_datatables.response'
-
-    App\Router\Router:
-        decorates: 'router'
-        arguments: ['@App\Router\Router.inner']
-
 # TODO: Move to stof_doctrine_extensions.yaml
 stof_doctrine_extensions:
-    default_locale: en
     orm:
         default:
             timestampable: true
             blameable: true
             softdeleteable: true
+
+# TODO: Move to services.yaml
+services:
+    Sg\DatatablesBundle\Response\DatatableResponse: '@sg_datatables.response'
+
+    # TODO: this doesn't work here - it only works if this is placed inside services.yaml
+    App\Router\Router:
+        decorates: 'router'
+        arguments: ['@App\Router\Router.inner']
