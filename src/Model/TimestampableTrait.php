@@ -6,7 +6,7 @@ namespace App\Model;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
-trait TimestampableEntityTrait
+trait TimestampableTrait
 {
     /**
      * @var \DateTimeImmutable

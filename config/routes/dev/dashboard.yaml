@@ -1,0 +1,5 @@
+dashboard:
+    path: /
+    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController::templateAction
+    defaults:
+        template: dashboard/index.html.twig

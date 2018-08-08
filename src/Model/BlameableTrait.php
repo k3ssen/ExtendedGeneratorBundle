@@ -12,7 +12,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
  * Note that this trait refers to "App\Entity\User", which is the most common place for the User-class to reside.
  * If your User-class is located elsewhere, make sure you use something else (e.g. copy this trait and use a different targetEntity)
  */
-trait BlameableEntityTrait
+trait BlameableTrait
 {
     /**
      * @var UserInterface

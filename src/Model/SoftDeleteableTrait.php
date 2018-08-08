@@ -5,7 +5,7 @@ namespace App\Model;
 
 use Doctrine\ORM\Mapping as ORM;
 
-trait SoftDeleteableEntityTrait
+trait SoftDeleteableTrait
 {
     /**
      * @var \DateTimeImmutable

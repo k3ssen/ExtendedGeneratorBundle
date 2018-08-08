@@ -8,7 +8,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 /**
  * Use this BlameableInterface when you have a User entity that you can refer to.
  */
-interface BlameableEntityInterface
+interface BlameableInterface
 {
     /**
      * @return static
