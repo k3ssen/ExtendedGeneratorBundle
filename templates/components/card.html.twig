@@ -15,13 +15,15 @@
             {% endblock %}
         {% endblock %}
     </div>
-    <div class="card-footer">
-        {% block card_footer %}
-            {% block footer %}
-                {% if entity is defined or action_prefix is defined %}
-                    {% include 'components/actions.twig' %}
-                {% endif %}
+    {% if block('card_footer')|replace({' ':''}) is not empty or use_footer|default(false) %}
+        <div class="card-footer">
+            {% block card_footer %}
+                {% block footer %}
+                    {% if entity is defined or action_prefix is defined %}
+                        {% include 'components/actions.html.twig' %}
+                    {% endif %}
+                {% endblock %}
             {% endblock %}
-        {% endblock %}
-    </div>
+        </div>
+    {% endif %}
 </div>

@@ -9,13 +9,13 @@
 {% set vote = vote is defined and vote ? true : false %}
 
 {% if '_index' not in current_route and (vote == false or is_granted(voter_prefix~'_INDEX')) %}
-    <a href="{{ path(action_prefix~'_index') }}" class="btn btn-secondary">
+    <a href="{{ path(action_prefix~'_index') }}" class="btn btn-info">
         <span class="fa fa-list"></span>
         <span class="d-none d-md-inline">Overview</span>
     </a>
 {% endif %}
 {% if ('_edit' in current_route or '_delete' in current_route) and (vote == false or is_granted(voter_prefix~'_VIEW', entity)) %}
-    <a href="{{ path(action_prefix~'_show', entity) }}" class="btn btn-secondary">
+    <a href="{{ path(action_prefix~'_show', entity) }}" class="btn btn-info">
         <span class="fa fa-search-plus"></span>
         <span class="d-none d-md-inline">Details</span>
     </a>
