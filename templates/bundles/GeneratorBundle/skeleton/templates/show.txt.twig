@@ -4,18 +4,23 @@
 
 {% block body %}
 {{ "{% block body %}" }}
-    {{ "{% embed 'components/card.twig' with {entity: "~entity_singularized~"} %}" }}
+    {{ "{% embed 'components/card.html.twig' with {entity: "~entity_singularized~"} %}" }}
     {%- for property in meta_entity.properties %}
         {# @var property \K3ssen\GeneratorBundle\MetaData\Property\MetaPropertyInterface #}
         {%- set getter = entity_singularized ~ '.' ~ property.name %}
         {%- if property.ormType in 'OneToManyToMany' %}
 
-        {{ "{% embed 'components/static_field_row.twig' with {label: "~property.name~"|humanize} %}" }}
+        {{ "{% embed 'components/static_field_row.html.twig' with {label: "~property.name~"|humanize} %}" }}
             <ul>
                 {{ '{% for ' ~ property.name|singularize|tableize ~ ' in ' ~ getter ~ ' %}' }}
                 <li>{{ '{{ ' ~ property.name|singularize|tableize ~ ' }}' }}</li>
                 {{ '{% endfor %}' }}
             </ul>
+        {{ "{% endembed %}" }}
+        {%- elseif property.ormType in ['text'] %}
+
+        {{ "{% embed 'components/static_field_row.html.twig' with {label: "~property.name~"|humanize} %}" }}
+            {{ '{{ '~ property.name ~'|nl2br }}' }}
         {{ "{% endembed %}" }}
         {%- else %}
             {%- set filter = null %}

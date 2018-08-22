@@ -67,7 +67,7 @@ class ComponentsExtension extends \Twig_Extension
 
     public function getStaticFieldRow(\Twig_Environment $environment, $label, $value)
     {
-        return $environment->render('components/static_field_row.twig', [
+        return $environment->render('components/static_field_row.html.twig', [
             'label' => $label,
             'value' => $value,
         ]);

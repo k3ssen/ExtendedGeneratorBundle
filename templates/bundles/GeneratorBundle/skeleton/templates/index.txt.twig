@@ -4,7 +4,7 @@
 
 {% block body %}
 {{ "{% block body %}" }}
-    {{ "{% embed 'components/card.twig' with {action_prefix: '"~entity_singularized~"'} %}" }}
+    {{ "{% embed 'components/card.html.twig' with {action_prefix: '"~entity_singularized~"'} %}" }}
 {% block index_table %}
 {% if generate_options.useDatatable %}
         {{ " {{ sg_datatables_render_html(datatable) }}" }}

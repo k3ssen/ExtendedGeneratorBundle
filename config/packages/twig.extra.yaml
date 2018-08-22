@@ -1,0 +1,4 @@
+# TODO: Merge this configuration with twig.yaml
+twig:
+    form_themes:
+        - 'bootstrap_4_horizontal_layout.html.twig'
